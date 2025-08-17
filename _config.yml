@@ -1,0 +1,32 @@
+title: "Бази даних - Методичні матеріали"
+description: "Курс з баз даних для студентів IT спеціальностей"
+url: "https://your-username.github.io"
+baseurl: "/metodichni-bazy-danykh"
+
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+collections:
+  lekciyi:
+    output: true
+    permalink: /:collection/:name/
+  laboratorni:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "lekciyi"
+    values:
+      layout: "lecture"
+  - scope:
+      path: ""
+      type: "laboratorni"
+    values:
+      layout: "lab"
