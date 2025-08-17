@@ -1,32 +1,81 @@
-title: "Бази даних - Методичні матеріали"
-description: "Курс з баз даних для студентів IT спеціальностей"
-url: "https://your-username.github.io"
-baseurl: "/metodichni-bazy-danykh"
+# Конфігурація курсу "Бази даних"
+title: "Бази даних"
+description: "Методичні матеріали з курсу 'Бази даних' для студентів IT спеціальностей"
+baseurl: "/metodichni-bazy-danykh" # назва репозиторію
+url: "https://your-username.github.io" # замініть на свій username
 
+# Автор курсу
+author:
+  name: "Прізвище Ім'я По батькові"
+  email: "your.email@university.edu"
+  university: "Назва університету"
+  department: "Кафедра інформаційних технологій"
+
+# Jekyll налаштування
 markdown: kramdown
 highlighter: rouge
 theme: minima
 
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
 
+# Collections для структурованого контенту
 collections:
-  lekciyi:
+  lectures:
     output: true
     permalink: /:collection/:name/
-  laboratorni:
+  labs:
+    output: true
+    permalink: /:collection/:name/
+  resources:
     output: true
     permalink: /:collection/:name/
 
+# Defaults для сторінок
 defaults:
   - scope:
       path: ""
-      type: "lekciyi"
+      type: "lectures"
     values:
       layout: "lecture"
+      nav_order: 2
   - scope:
       path: ""
-      type: "laboratorni"
+      type: "labs"
     values:
       layout: "lab"
+      nav_order: 3
+  - scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: "default"
+      nav_order: 4
+
+# Навігація
+navigation:
+  - title: "Головна"
+    url: "/"
+  - title: "Лекції"
+    url: "/lectures/"
+  - title: "Лабораторні"
+    url: "/labs/"
+  - title: "Ресурси"
+    url: "/resources/"
+
+# Налаштування курсу
+course:
+  semester: "Осінній семестр 2025"
+  credits: 4
+  hours: 
+    total: 120
+    lectures: 32
+    labs: 16
+    independent: 72
+  
+# Mermaid підтримка
+mermaid:
+  theme: default
